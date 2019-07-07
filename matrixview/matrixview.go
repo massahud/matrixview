@@ -12,7 +12,7 @@ package matrixview
 // FromInterface receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromInterface(buffer [][]interface{}, startRow, startCol, rows, cols int) [][]interface{} {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -24,7 +24,7 @@ func FromInterface(buffer [][]interface{}, startRow, startCol, rows, cols int) [
 // FromByte receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromByte(buffer [][]byte, startRow, startCol, rows, cols int) [][]byte {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -36,7 +36,7 @@ func FromByte(buffer [][]byte, startRow, startCol, rows, cols int) [][]byte {
 // FromInt receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromInt(buffer [][]int, startRow, startCol, rows, cols int) [][]int {
 	view := make([][]int, rows)
 	copy(view, buffer[startRow : startRow+rows : startRow+rows])
@@ -49,7 +49,7 @@ func FromInt(buffer [][]int, startRow, startCol, rows, cols int) [][]int {
 // FromInt8 receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromInt8(buffer [][]int8, startRow, startCol, rows, cols int) [][]int8 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -61,7 +61,7 @@ func FromInt8(buffer [][]int8, startRow, startCol, rows, cols int) [][]int8 {
 // FromInt16 receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromInt16(buffer [][]int16, startRow, startCol, rows, cols int) [][]int16 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -73,7 +73,7 @@ func FromInt16(buffer [][]int16, startRow, startCol, rows, cols int) [][]int16 {
 // FromInt32 receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromInt32(buffer [][]int32, startRow, startCol, rows, cols int) [][]int32 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -85,7 +85,7 @@ func FromInt32(buffer [][]int32, startRow, startCol, rows, cols int) [][]int32 {
 // FromInt64 receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromInt64(buffer [][]int64, startRow, startCol, rows, cols int) [][]int64 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -97,7 +97,7 @@ func FromInt64(buffer [][]int64, startRow, startCol, rows, cols int) [][]int64 {
 // FromUint receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromUint(buffer [][]uint, startRow, startCol, rows, cols int) [][]uint {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -109,7 +109,7 @@ func FromUint(buffer [][]uint, startRow, startCol, rows, cols int) [][]uint {
 // FromUint8 receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromUint8(buffer [][]uint8, startRow, startCol, rows, cols int) [][]uint8 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -121,7 +121,7 @@ func FromUint8(buffer [][]uint8, startRow, startCol, rows, cols int) [][]uint8 {
 // FromUint16 receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromUint16(buffer [][]uint16, startRow, startCol, rows, cols int) [][]uint16 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -133,7 +133,7 @@ func FromUint16(buffer [][]uint16, startRow, startCol, rows, cols int) [][]uint1
 // FromUint32 receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromUint32(buffer [][]uint32, startRow, startCol, rows, cols int) [][]uint32 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -145,7 +145,7 @@ func FromUint32(buffer [][]uint32, startRow, startCol, rows, cols int) [][]uint3
 // FromUint64 receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromUint64(buffer [][]uint64, startRow, startCol, rows, cols int) [][]uint64 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -157,7 +157,7 @@ func FromUint64(buffer [][]uint64, startRow, startCol, rows, cols int) [][]uint6
 // FromFloat32 receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromFloat32(buffer [][]float32, startRow, startCol, rows, cols int) [][]float32 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -169,7 +169,7 @@ func FromFloat32(buffer [][]float32, startRow, startCol, rows, cols int) [][]flo
 // FromFloat64 receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromFloat64(buffer [][]float64, startRow, startCol, rows, cols int) [][]float64 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -181,7 +181,7 @@ func FromFloat64(buffer [][]float64, startRow, startCol, rows, cols int) [][]flo
 // FromBool receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromBool(buffer [][]bool, startRow, startCol, rows, cols int) [][]bool {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -193,7 +193,7 @@ func FromBool(buffer [][]bool, startRow, startCol, rows, cols int) [][]bool {
 // FromComplex64 receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromComplex64(buffer [][]complex64, startRow, startCol, rows, cols int) [][]complex64 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -205,7 +205,7 @@ func FromComplex64(buffer [][]complex64, startRow, startCol, rows, cols int) [][
 // FromComplex128 receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromComplex128(buffer [][]complex128, startRow, startCol, rows, cols int) [][]complex128 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -217,7 +217,7 @@ func FromComplex128(buffer [][]complex128, startRow, startCol, rows, cols int) [
 // FromComplex128 receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromString(buffer [][]string, startRow, startCol, rows, cols int) [][]string {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -229,7 +229,7 @@ func FromString(buffer [][]string, startRow, startCol, rows, cols int) [][]strin
 // FromRune receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromRune(buffer [][]rune, startRow, startCol, rows, cols int) [][]rune {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -241,7 +241,7 @@ func FromRune(buffer [][]rune, startRow, startCol, rows, cols int) [][]rune {
 // FromBytePtr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromBytePtr(buffer [][]*byte, startRow, startCol, rows, cols int) [][]*byte {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -253,7 +253,7 @@ func FromBytePtr(buffer [][]*byte, startRow, startCol, rows, cols int) [][]*byte
 // FromIntPtr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromIntPtr(buffer [][]*int, startRow, startCol, rows, cols int) [][]*int {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -265,7 +265,7 @@ func FromIntPtr(buffer [][]*int, startRow, startCol, rows, cols int) [][]*int {
 // FromInt8Ptr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromInt8Ptr(buffer [][]*int8, startRow, startCol, rows, cols int) [][]*int8 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -277,7 +277,7 @@ func FromInt8Ptr(buffer [][]*int8, startRow, startCol, rows, cols int) [][]*int8
 // FromInt16Ptr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromInt16Ptr(buffer [][]*int16, startRow, startCol, rows, cols int) [][]*int16 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -289,7 +289,7 @@ func FromInt16Ptr(buffer [][]*int16, startRow, startCol, rows, cols int) [][]*in
 // FromInt32Ptr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromInt32Ptr(buffer [][]*int32, startRow, startCol, rows, cols int) [][]*int32 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -301,7 +301,7 @@ func FromInt32Ptr(buffer [][]*int32, startRow, startCol, rows, cols int) [][]*in
 // FromInt64Ptr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromInt64Ptr(buffer [][]*int64, startRow, startCol, rows, cols int) [][]*int64 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -313,7 +313,7 @@ func FromInt64Ptr(buffer [][]*int64, startRow, startCol, rows, cols int) [][]*in
 // FromUintPtr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromUintPtr(buffer [][]*uint, startRow, startCol, rows, cols int) [][]*uint {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -325,7 +325,7 @@ func FromUintPtr(buffer [][]*uint, startRow, startCol, rows, cols int) [][]*uint
 // FromUint8Ptr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromUint8Ptr(buffer [][]*uint8, startRow, startCol, rows, cols int) [][]*uint8 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -337,7 +337,7 @@ func FromUint8Ptr(buffer [][]*uint8, startRow, startCol, rows, cols int) [][]*ui
 // FromUint16Ptr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromUint16Ptr(buffer [][]*uint16, startRow, startCol, rows, cols int) [][]*uint16 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -349,7 +349,7 @@ func FromUint16Ptr(buffer [][]*uint16, startRow, startCol, rows, cols int) [][]*
 // FromUint32Ptr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromUint32Ptr(buffer [][]*uint32, startRow, startCol, rows, cols int) [][]*uint32 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -361,7 +361,7 @@ func FromUint32Ptr(buffer [][]*uint32, startRow, startCol, rows, cols int) [][]*
 // FromUint64Ptr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromUint64Ptr(buffer [][]*uint64, startRow, startCol, rows, cols int) [][]*uint64 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -373,7 +373,7 @@ func FromUint64Ptr(buffer [][]*uint64, startRow, startCol, rows, cols int) [][]*
 // FromFloat32Ptr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromFloat32Ptr(buffer [][]*float32, startRow, startCol, rows, cols int) [][]*float32 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -385,7 +385,7 @@ func FromFloat32Ptr(buffer [][]*float32, startRow, startCol, rows, cols int) [][
 // FromFloat64Ptr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromFloat64Ptr(buffer [][]*float64, startRow, startCol, rows, cols int) [][]*float64 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -397,7 +397,7 @@ func FromFloat64Ptr(buffer [][]*float64, startRow, startCol, rows, cols int) [][
 // FromBoolPtr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromBoolPtr(buffer [][]*bool, startRow, startCol, rows, cols int) [][]*bool {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -409,7 +409,7 @@ func FromBoolPtr(buffer [][]*bool, startRow, startCol, rows, cols int) [][]*bool
 // FromComplex64Ptr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromComplex64Ptr(buffer [][]*complex64, startRow, startCol, rows, cols int) [][]*complex64 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -421,7 +421,7 @@ func FromComplex64Ptr(buffer [][]*complex64, startRow, startCol, rows, cols int)
 // FromComplex128Ptr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromComplex128Ptr(buffer [][]*complex128, startRow, startCol, rows, cols int) [][]*complex128 {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -433,7 +433,7 @@ func FromComplex128Ptr(buffer [][]*complex128, startRow, startCol, rows, cols in
 // FromComplex128Ptr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromStringPtr(buffer [][]*string, startRow, startCol, rows, cols int) [][]*string {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
@@ -445,7 +445,7 @@ func FromStringPtr(buffer [][]*string, startRow, startCol, rows, cols int) [][]*
 // FromRunePtr receives a buffer matrix and returns a view of it
 // setting with the specified number of rows and columns
 // The matrix buffer must have the dimensions of rows and columns at least equal
-// to rows and cols, or else it will error with index out of rage
+// to rows and cols, or else it will error with index out of range
 func FromRunePtr(buffer [][]*rune, startRow, startCol, rows, cols int) [][]*rune {
 	view := buffer[startRow : startRow+rows : startRow+rows]
 	for i := range view {
