@@ -7,6 +7,7 @@ package matrixview_test
 import (
 	"fmt"
 	"github.com/massahud/matrixview/matrixview"
+	"os"
 )
 
 
@@ -26,8 +27,12 @@ func Example() {
 		from := words[0]
 		to := words[1]
 
-		view := matrixview.FromInt(buf, 0, 0, len(from)+1, len(to)+1)
-		if err := fillLevenshteinMatrix(view, from, to); err != nil {
+		view, err := matrixview.FromInt(buf, 0, 0, len(from)+1, len(to)+1)
+		if err != nil {
+			fmt.Printf("Error generating view: %s\n", err.Error())
+			os.Exit(1)
+		}
+		if err = fillLevenshteinMatrix(view, from, to); err != nil {
 			fmt.Printf("ERROR: %s\n", err.Error())
 			return
 		}
