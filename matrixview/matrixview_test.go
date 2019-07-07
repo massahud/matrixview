@@ -5,7 +5,6 @@
 package matrixview
 
 import (
-	"fmt"
 	"reflect"
 	"testing"
 )
@@ -74,7 +73,11 @@ func TestFromInterface(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromInterface(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromInterface(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromInterface() = %v, want %v", got, tt.want)
 			}
 		})
@@ -144,7 +147,11 @@ func TestFromByte(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromByte(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromByte(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromByte() = %v, want %v", got, tt.want)
 			}
 		})
@@ -213,7 +220,11 @@ func TestFromInt(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromInt(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromInt(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromInt() = %v, want %v", got, tt.want)
 			}
 		})
@@ -282,7 +293,11 @@ func TestFromInt8(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromInt8(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromInt8(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromInt8() = %v, want %v", got, tt.want)
 			}
 		})
@@ -351,7 +366,11 @@ func TestFromInt16(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromInt16(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromInt16(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromInt16() = %v, want %v", got, tt.want)
 			}
 		})
@@ -420,7 +439,11 @@ func TestFromInt32(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromInt32(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromInt32(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromInt32() = %v, want %v", got, tt.want)
 			}
 		})
@@ -489,7 +512,11 @@ func TestFromInt64(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromInt64(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromInt64(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromInt64() = %v, want %v", got, tt.want)
 			}
 		})
@@ -558,7 +585,11 @@ func TestFromUint(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromUint(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromUint(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromUint() = %v, want %v", got, tt.want)
 			}
 		})
@@ -627,7 +658,11 @@ func TestFromUint8(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromUint8(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromUint8(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromUint8() = %v, want %v", got, tt.want)
 			}
 		})
@@ -696,7 +731,11 @@ func TestFromUint16(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromUint16(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromUint16(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromUint16() = %v, want %v", got, tt.want)
 			}
 		})
@@ -765,7 +804,11 @@ func TestFromUint32(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromUint32(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromUint32(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromUint32() = %v, want %v", got, tt.want)
 			}
 		})
@@ -834,7 +877,11 @@ func TestFromUint64(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromUint64(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromUint64(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromUint64() = %v, want %v", got, tt.want)
 			}
 		})
@@ -903,7 +950,11 @@ func TestFromFloat32(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromFloat32(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromFloat32(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromFloat32() = %v, want %v", got, tt.want)
 			}
 		})
@@ -972,7 +1023,11 @@ func TestFromFloat64(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromFloat64(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromFloat64(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromFloat64() = %v, want %v", got, tt.want)
 			}
 		})
@@ -1041,7 +1096,11 @@ func TestFromBool(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromBool(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromBool(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromBool() = %v, want %v", got, tt.want)
 			}
 		})
@@ -1110,7 +1169,11 @@ func TestFromComplex64(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromComplex64(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromComplex64(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromComplex64() = %v, want %v", got, tt.want)
 			}
 		})
@@ -1179,7 +1242,11 @@ func TestFromComplex128(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromComplex128(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromComplex128(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromComplex128() = %v, want %v", got, tt.want)
 			}
 		})
@@ -1248,7 +1315,11 @@ func TestFromString(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromString(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromString(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromString() = %v, want %v", got, tt.want)
 			}
 		})
@@ -1317,7 +1388,11 @@ func TestFromRune(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromRune(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromRune(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromRune() = %v, want %v", got, tt.want)
 			}
 		})
@@ -1403,7 +1478,11 @@ func TestFromBytePtr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromBytePtr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromBytePtr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromBytePtr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -1488,7 +1567,11 @@ func TestFromIntPtr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromIntPtr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromIntPtr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromIntPtr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -1573,7 +1656,11 @@ func TestFromInt8Ptr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromInt8Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromInt8Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromInt8Ptr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -1658,7 +1745,11 @@ func TestFromInt16Ptr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromInt16Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromInt16Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromInt16Ptr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -1743,7 +1834,11 @@ func TestFromInt32Ptr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromInt32Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromInt32Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromInt32Ptr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -1828,7 +1923,11 @@ func TestFromInt64Ptr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromInt64Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromInt64Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromInt64Ptr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -1913,7 +2012,11 @@ func TestFromUintPtr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromUintPtr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromUintPtr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromUintPtr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -1998,7 +2101,11 @@ func TestFromUint8Ptr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromUint8Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromUint8Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromUint8Ptr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -2083,7 +2190,11 @@ func TestFromUint16Ptr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromUint16Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromUint16Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromUint16Ptr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -2168,7 +2279,11 @@ func TestFromUint32Ptr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromUint32Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromUint32Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromUint32Ptr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -2253,7 +2368,11 @@ func TestFromUint64Ptr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromUint64Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromUint64Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromUint64Ptr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -2339,7 +2458,11 @@ func TestFromBoolPtr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromBoolPtr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromBoolPtr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromBoolPtr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -2424,7 +2547,11 @@ func TestFromFloat32Ptr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromFloat32Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromFloat32Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromFloat32Ptr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -2509,7 +2636,11 @@ func TestFromFloat64Ptr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromFloat64Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromFloat64Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromFloat64Ptr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -2595,7 +2726,11 @@ func TestFromComplex64Ptr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromComplex64Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromComplex64Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromComplexPtr64() = %v, want %v", got, tt.want)
 			}
 		})
@@ -2680,7 +2815,11 @@ func TestFromFromComplex128Ptr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromComplex128Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromComplex128Ptr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromComplexPtr128() = %v, want %v", got, tt.want)
 			}
 		})
@@ -2766,7 +2905,11 @@ func TestFromStringPtr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromStringPtr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromStringPtr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromStringPtr() = %v, want %v", got, tt.want)
 			}
 		})
@@ -2852,100 +2995,13 @@ func TestFromRunePtr(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FromRunePtr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols); !reflect.DeepEqual(got, tt.want) {
+			got, err := FromRunePtr(tt.args.buffer, tt.args.startRow, tt.args.startCol, tt.args.rows, tt.args.cols)
+			if err != nil {
+				t.Fatalf("error generating view %s", err.Error())
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("FromRunePtr() = %v, want %v", got, tt.want)
 			}
 		})
 	}
-}
-
-func ExampleEditDistance() {
-	buf := make([][]int, 100)
-	for i := range buf {
-		buf[i] = make([]int, 100)
-	}
-
-
-	work := [][2]string{
-		{"sitting", "kitten"},
-		{"Sunday", "Saturday"},
-	}
-
-	for _, words := range work {
-		from := words[0]
-		to := words[1]
-
-		view := FromInt(buf, 0, 0, len(from)+1, len(to)+1)
-		if err := fillLevenshteinMatrix(view, from, to); err != nil {
-			fmt.Printf("ERROR: %s\n", err.Error())
-			return
-		}
-		fmt.Printf("From: %s To: %s Distance: %d Ratio: %.2f\n", from, to, calculateDistance(view), calculateRatio(view))
-	}
-
-	// Output:
-	//From: sitting To: kitten Distance: 5 Ratio: 0.62
-	//From: Sunday To: Saturday Distance: 4 Ratio: 0.71
-}
-
-func fillLevenshteinMatrix(matrix [][]int, from, to string) error {
-
-	rows := len(from) + 1
-	cols := len(to) + 1
-
-	if len(matrix) != rows {
-		return fmt.Errorf("matrix must have len(from) + 1 = %d rows, but has %d rows.", rows, len(matrix))
-	}
-
-	for row := range matrix {
-		if len(matrix[row]) != cols {
-			return fmt.Errorf("matrix must have len(cols) + 1 = %d cols, but row %d has %d cols.", cols, row, len(matrix[row]))
-		}
-		matrix[row][0] = row
-	}
-
-	for col := range matrix[0] {
-		matrix[0][col] = col
-	}
-
-	for row := 1; row < len(matrix); row++ {
-		for col := 1; col < len(matrix[row]); col++ {
-			var substitutionCost int
-			if from[row-1] != to[col-1] {
-				substitutionCost = 2
-			}
-
-			matrix[row][col] = min(
-				matrix[row-1][col]+1,                  // deletion
-				matrix[row][col-1]+1,                  // insertion
-				matrix[row-1][col-1]+substitutionCost, // substitution
-			)
-		}
-	}
-	return nil
-}
-
-func calculateDistance(matrix [][]int) int {
-	return matrix[len(matrix)-1][len(matrix[len(matrix)-1])-1]
-}
-
-func calculateRatio(matrix [][]int) float64 {
-	sum := float64(len(matrix) + len(matrix[0]) - 2)
-	if sum == 0 {
-		return 0
-	}
-	return 1 - float64(calculateDistance(matrix))/sum
-}
-
-func min(a, b, c int) int {
-	if a < b {
-		if a < c {
-			return a
-		}
-		return c
-	}
-	if b < c {
-		return b
-	}
-	return c
 }
